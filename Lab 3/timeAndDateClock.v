@@ -65,9 +65,9 @@ always @(posedge clk, negedge nReset) begin
 						
 						// reset hours when (hour == 23) or hour_high + 1 when (hour_low == 9)
 						if (hr_lo == 4'd9 || (hr_hi == 2'd2 && hr_lo == 4'd3)) begin
-                            timeAndDate_Out[17:14] <= 4'd0;
-                            if (hr_hi == 2'd2) begin
-                                timeAndDate_Out[19:18] <= 2'd0; // Reset hours to 00 after 23
+                            				 timeAndDate_Out[17:14] <= 4'd0;
+                           				 if (hr_hi == 2'd2) begin
+                               					 timeAndDate_Out[19:18] <= 2'd0; // Reset hours to 00 after 23
 								
 								// Clockwork for days
 								if ((day_lo == 4'd9 && day_hi == 2'd0)|| (day_lo == 4'd9 && day_hi == 2'd1) || ((day_lo == 4'd9 && day_hi == 2'd2) && !(month_lo == 4'd2 && isLeapYear)) ) begin
